@@ -36,3 +36,25 @@ document.querySelectorAll('.theme-btn').forEach(btn => {
     btn.classList.add('active');
   });
 });
+// SLIDESHOW
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const showSlide = idx => {
+  slides.forEach(s => s.classList.remove('active'));
+  slides[idx].classList.add('active');
+};
+
+document.querySelector('.prev').addEventListener('click', () => {
+  slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+  showSlide(slideIndex);
+});
+
+document.querySelector('.next').addEventListener('click', () => {
+  slideIndex = (slideIndex + 1) % slides.length;
+  showSlide(slideIndex);
+});
+
+setInterval(() => {
+  slideIndex = (slideIndex + 1) % slides.length;
+  showSlide(slideIndex);
+}, 5000);
