@@ -102,3 +102,35 @@ questions.forEach((item, i) => {
   `;
   quizContainer.appendChild(div);
 });
+// Submeter quiz (com validação de todas as respostas)
+document.getElementById('quiz-submit').addEventListener('click', () => {
+  // Verificar se todas as perguntas foram respondidas
+  for (let i = 0; i < questions.length; i++) {
+    const respostaSelecionada = quizContainer.querySelector(`input[name=q${i}]:checked`);
+    if (!respostaSelecionada) {
+      alert('Por favor, responda todas as perguntas antes de ver o resultado.');
+      return; // Sai da função sem calcular pontuação
+    }
+  }
+
+  // Se todas as perguntas têm resposta, calcula pontuação
+  let score = 0;
+  const details = [];
+
+  questions.forEach((item, i) => {
+    const sel = quizContainer.querySelector(`input[name=q${i}]:checked`);
+    if (+sel.value === item.correct) {
+      score++;
+      details.push(`Pergunta ${i + 1}: correta`);
+    } else {
+      details.push(`Pergunta ${i + 1}: incorreta (Resposta correta: ${item.a[item.correct]})`);
+    }
+  });
+
+  resultDiv.innerHTML = `
+    <p>Você acertou ${score} de ${questions.length} perguntas.</p>
+    <ul>
+      ${details.map(d => `<li>${d}</li>`).join('')}
+    </ul>
+  `;
+});
