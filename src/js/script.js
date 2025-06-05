@@ -58,3 +58,14 @@ setInterval(() => {
   slideIndex = (slideIndex + 1) % slides.length;
   showSlide(slideIndex);
 }, 5000);
+// VALIDAÇAO FORMS
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  if (!form.checkValidity()) {
+    alert('Por favor, preencha todos os campos corretamente.');
+    return;
+  }
+  alert('Mensagem enviada com sucesso!');
+  form.reset();
+});
