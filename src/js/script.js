@@ -28,3 +28,11 @@ document.querySelectorAll('.menu-link').forEach(link => {
     }
   });
 });
+// TEMAS BACKGROUND
+document.querySelectorAll('.theme-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.body.setAttribute('data-theme', btn.dataset.theme);
+    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
