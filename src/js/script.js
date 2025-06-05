@@ -134,3 +134,28 @@ document.getElementById('quiz-submit').addEventListener('click', () => {
     </ul>
   `;
 });
+// HIGHLIGHT DINÂMICO DA SEÇÃO ATIVA AO ROLAR A PÁGINA
+const sections = document.querySelectorAll('section[id]');
+const menuLinks = document.querySelectorAll('.menu-link');
+
+function highlightCurrentSection() {
+  const scrollY = window.pageYOffset;
+
+  sections.forEach(sec => {
+    const sectionHeight = sec.offsetHeight;
+    const sectionTop = sec.offsetTop - 100; // compensa header fixo (~80px)
+    const sectionId = sec.getAttribute('id');
+
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      // Marca o link correspondente à seção visível
+      menuLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${sectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}
+
+window.addEventListener('scroll', highlightCurrentSection);
