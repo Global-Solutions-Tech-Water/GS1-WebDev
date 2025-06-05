@@ -85,3 +85,20 @@ const questions = [
 
 const quizContainer = document.getElementById('quiz-container');
 const resultDiv     = document.getElementById('quiz-result');
+// Renderizar quiz
+questions.forEach((item, i) => {
+  const div = document.createElement('div');
+  div.className = 'question';
+  div.innerHTML = `
+    <p>${i + 1}. ${item.q}</p>
+    <div class="answers">
+      ${item.a.map((opt, j) => `
+        <label>
+          <input type="radio" name="q${i}" value="${j}">
+          ${opt}
+        </label>
+      `).join('')}
+    </div>
+  `;
+  quizContainer.appendChild(div);
+});
