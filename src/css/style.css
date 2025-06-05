@@ -339,3 +339,11 @@ section ol {
 #quiz-result li {
   margin-bottom: 0.5rem;
 }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: transparent;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
