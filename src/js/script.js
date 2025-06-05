@@ -69,3 +69,19 @@ form.addEventListener('submit', e => {
   alert('Mensagem enviada com sucesso!');
   form.reset();
 });
+// QUIZ COM FEEDBACK DETALHADO
+const questions = [
+  { q: 'Qual é o principal fator que causa enchentes urbanas?', a: ['Deficiências na drenagem', 'Excesso de chuva', 'Erosão do solo'], correct: 0 },
+  { q: 'Como sensores IoT ajudam no monitoramento?', a: ['Detectam nível de água em tempo real', 'Enviam relatórios semanais', 'Controlam vazão'], correct: 0 },
+  { q: 'A partir de que nível (m) há risco de transbordamento?', a: ['1m', '2m', '5m'], correct: 1 },
+  { q: 'Qual ação quando nível atinge 2,5m?', a: ['Emitir alerta e abrir abrigos', 'Apenas monitorar', 'Encerrar serviços'], correct: 0 },
+  { q: 'Antecedência mínima de alerta?', a: ['10 min', '30 min', '1 hora'], correct: 1 },
+  { q: 'Como push notifications ajudam?', a: ['Enviam alertas imediatos', 'Criam relatórios mensais', 'Bloqueiam apps'], correct: 0 },
+  { q: 'Rota alternativa em alagamentos?', a: ['Rua paralela elevada', 'Vias centrais', 'Ruas residenciais'], correct: 0 },
+  { q: 'Medida em casa para prevenção?', a: ['Elevar móveis', 'Plantar árvores', 'Pintar paredes'], correct: 0 },
+  { q: 'O que exibe o dashboard?', a: ['Mapa de áreas inundadas', 'Faturas automáticas', 'Controle de semáforos'], correct: 0 },
+  { q: 'Órgão que coordena resgates?', a: ['Defesa Civil', 'MEC', 'Detran'], correct: 0 }
+];
+
+const quizContainer = document.getElementById('quiz-container');
+const resultDiv     = document.getElementById('quiz-result');
