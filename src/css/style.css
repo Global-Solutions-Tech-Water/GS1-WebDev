@@ -28,3 +28,37 @@ body[data-theme="blue"] {
   --text:       #01579B;    /* texto principal de cor escura sobre fundo claro */
   --light:      #FFFFFF;    /* para seções brancas, caso necessário */
 }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text);
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--accent);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.header h1 {
+  color: #fff;
+  font-size: 1.8rem;
+}
