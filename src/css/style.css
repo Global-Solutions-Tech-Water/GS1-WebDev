@@ -244,3 +244,42 @@ section ol {
 .slide-btn.next {
   right: 10px;
 }
+/* Form */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+#contactForm label {
+  align-self: flex-start;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+#contactForm input,
+#contactForm textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+#contactForm button {
+  width: fit-content;
+  padding: 0.8rem 1.2rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  align-self: flex-end;
+}
+
+#contactForm button:hover {
+  background: var(--accent);
+}
