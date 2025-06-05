@@ -1,0 +1,30 @@
+/* Google Fonts base */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+
+/* Variáveis de tema */
+:root {
+  --font: 'Manrope', sans-serif;
+  --bg-color:   #f4f4f4;
+  --primary:    #2196F3;
+  --accent:     #0D47A1;
+  --text:       #333333;
+  --light:      #ffffff;
+  --shadow:     rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme="dark"] {
+  --bg-color:   #121212;
+  --primary:    #BB86FC;
+  --accent:     #3700B3;
+  --text:       #E0E0E0;
+  --light:      #1F1F1F;
+}
+
+body[data-theme="blue"] {
+  /* ---------- Paleta atualizada para o "terceiro tema" ---------- */
+  --bg-color:   #cad5db;    /* um azul muito suave de fundo */
+  --primary:    #0288D1;    /* azul “royal” para botões e títulos */
+  --accent:     #1e032b;    /* azul mais escuro para destaques e hover */
+  --text:       #01579B;    /* texto principal de cor escura sobre fundo claro */
+  --light:      #FFFFFF;    /* para seções brancas, caso necessário */
+}
